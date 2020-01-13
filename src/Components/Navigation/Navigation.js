@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../Constants/routes';
 import './header.css';
 const Navigation = (props) => {
-   
+  let log=props.logged;
     return(
+      
     <Fragment>
     <div className="header-container">
       <div className="flex-container">
@@ -24,12 +25,16 @@ const Navigation = (props) => {
       <li>
         <Link to={ROUTES.ACCOUNT}>Account</Link>
       </li> */}
-     {props.logged && <Fragment><li>
+     {log && <Fragment><li>
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
       </li>
       <li>
         <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
       </li></Fragment>}
+      {/* {!props.logged && <Fragment><li>
+        <Link to={ROUTES.SIGN_IN}>Log Out</Link>
+      </li>
+      <</Fragment>} */}
       </ul>
       </ul>
       

@@ -26,6 +26,7 @@ const SignIn = (props) => {
           
           localStorage.setItem(email,value.name);
           localStorage.setItem("currentUser",email);
+          localStorage.setItem("logged",true);
           changeRoute()
        
           return true

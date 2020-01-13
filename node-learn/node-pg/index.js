@@ -42,3 +42,5 @@ app.get('/', (request, response) => {
   app.get('/group',db.getGroupMsg)
   app.post('/createUser',db.createUser)
   app.post('/sendgroupmsg',db.sendGroupMsg)
+  app.post('/sendIndmsg',db.sendIndMsg)
+  app.get('/getchatmsg',db.getChatMsg)

@@ -8,7 +8,8 @@ export default class SearchUser extends Component {
         super(props);
         this.state={
             searchedUser:"",
-            userList:[]
+            userList:[],
+            selectedUser:""
         }
     }
     async componentDidMount(){
@@ -22,6 +23,11 @@ export default class SearchUser extends Component {
         this.setState({
             userList:userNameArray
         })
+    }
+    handleUser = (event)=>{
+      this.setState({
+        selectedUser:event.target.value
+      })
     }
     render(){
   return (
@@ -37,6 +43,7 @@ export default class SearchUser extends Component {
             label="Search Users"
             margin="normal"
             variant="outlined"
+            onChange={this.handleUser}
             fullWidth
             InputProps={{ ...params.InputProps, type: 'search' }}
           />
